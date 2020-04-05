@@ -68,7 +68,7 @@ module.exports = {
   //   "node_modules"
   // ],
 
-  // An array of file extensions your modules use
+    
   moduleFileExtensions: [
     "js",
     "json",
