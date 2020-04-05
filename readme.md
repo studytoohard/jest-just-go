@@ -20,3 +20,8 @@ npm init -y
 ```shell
 npm i jest --save-dev
 ```
+
+## 1.Jest怎么4行代码完成一个测试用例
+### 编写功能代码
+### 编写测试用例
+### 执行测试
