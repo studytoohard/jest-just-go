@@ -1,0 +1,15 @@
+{
+  "name": "jest-just-go",
+  "version": "1.0.0",
+  "description": "当我第一次听说TDD(Test-Driven Develop, 测试驱动开发)的时候，我首先想到的是测试小姐姐们想搞事情？后面发现这个玩意儿是想干掉测试，那好，下面开始让我们干掉这群整天给我们找bug...下面开始从简单的单元测试上手Jest测试框架。",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.2.7"
+  }
+}
