@@ -5,3 +5,18 @@
 1. Jest怎么4行代码完成一个测试用例
 2. Jest怎么让测试用例覆盖率100%
 3. Jest怎么和Typescript完美结合（填坑实录）
+
+## 项目初始化
+### 创建工程
+```shell
+mkdir jest-just-go && cd jest-just-go
+```
+### 初始化
+```shell
+npm init -y
+```
+
+### 安装依赖
+```shell
+npm i jest --save-dev
+```
