@@ -28,3 +28,6 @@ npm i jest --save-dev
 
 ## 2.Jest怎么让测试用例覆盖率100%
 ### 配置`jest.config.js`保存测试用例覆盖率执行报告
+
+## 3.Jest怎么和Typescript完美结合（填坑实录）
+### npm i ts-jest @types/jest typescript @types/node --save-dev
