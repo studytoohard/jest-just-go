@@ -7,6 +7,7 @@
 1. Jest怎么4行代码完成一个测试用例
 2. Jest怎么让测试用例覆盖率100%
 3. Jest怎么和Typescript完美结合（填坑实录）
+4. Jest最锋利的功能 Mock Functions
 
 ## 项目初始化
 
@@ -298,3 +299,153 @@ describe("test dessertFactoty feature", () => {
 ![](https://imgkr.cn-bj.ufileos.com/5c247ea3-e47d-4e5f-ac2b-6f5ef78d72d3.png)
 
 以上。
+
+## 4.Jest最锋利的功能 Mock Functions
+
+关于**`Jest`**测试框架中的Mock功能，我们主要关注两点：
+
+1. mock function.
+2. mock return value.
+
+从以上两点可以衍生出**`Jest`**对于代码单元测试中两项常用的锋利功能：
+
+1. 对功能中业务逻辑简化后的重新实现，方便有指向性的进行测试（比如忽略实际场景中的跨服务调用功能等）。
+2. 对功能返回值的直接模拟。
+
+为甜点增加了评论功能。
+
+```ts
+export default class dessert {
+    name: string;
+    static comment: string[] = [];
+    constructor(name: string) {
+        this.name = name;
+    }
+    enjoy() {
+        return "Enjoy the " + this.name;
+    }
+    static comments(message: string) {
+        dessert.comment.push(message);
+    }
+}
+```
+
+专门建立一个互动区进行甜点的讨论。
+
+```ts
+import dessert from "./dessert";
+
+module desserCommentModule {
+    export function comments(message: string) {
+        dessert.comments(message);
+        return dessert.comment;
+    }
+
+}
+
+export default desserCommentModule;
+```
+
+```ts
+import dessert from "../src/dessert";
+import desserCommentModule from "../src/desserCommentModule";
+jest.mock("../src/desserCommentModule");
+
+describe("test dessert feature", () => {
+    test("enjoy the cake", () => {
+        const cake = new dessert('cake');
+        expect(cake.enjoy()).toBe("Enjoy the cake");
+    })
+})
+
+describe("test dessert feature with mock", () => {
+    test("enjoy the cake with mock function", () => {
+        const dessertFactoryMock = jest.fn(name => new dessert(name));
+        const cake = dessertFactoryMock('cake');
+        expect(cake.enjoy()).toBe("Enjoy the cake");
+        expect(dessertFactoryMock.mock.results[0].value.enjoy()).toBe("Enjoy the cake");
+        console.log(dessertFactoryMock.mock);
+    })
+    test("enjoy the cake with mock return value", () => {
+        const dessertFactoryMock = jest.fn(name => new dessert(name));
+        const cake = new dessert('cake');
+        dessertFactoryMock.mockReturnValue(cake);
+        const tiramisu = dessertFactoryMock('tiramisu');
+        expect(tiramisu.enjoy()).toBe("Enjoy the cake");
+        expect(tiramisu).toEqual(cake);
+        expect(dessertFactoryMock.mock.results[0].value).toEqual(cake);
+    })
+    test("comment the dessert with mock module", () => {
+        const mockedDessert = desserCommentModule as jest.Mocked<typeof desserCommentModule>;
+        mockedDessert.comments.mockReturnValue(['not bad']);
+        expect(mockedDessert.comments("cake is so good")).toEqual(['not bad']);
+        expect(dessert.comment).toEqual([]);
+    })
+    test("comment the dessert with mock implementations", () => {
+        const mockedDessert = desserCommentModule as jest.Mocked<typeof desserCommentModule>;
+        mockedDessert.comments.mockImplementation((message: string) => {
+            dessert.comments(message);
+            return ['not bad'];
+        });
+        expect(mockedDessert.comments("cake is so good")).toEqual(['not bad']);
+        expect(dessert.comment).toEqual(['cake is so good']);
+    })
+})
+```
+
+### mock function
+
+```ts
+test.only("enjoy the cake with mock function", () => {  ...
+```
+
+这里我们通过**`jest.fn`**进行了**`mock function`**功能的展示，通过执行**`npm test`**看到**`.mock`**的结构信息：
+
+![](https://imgkr.cn-bj.ufileos.com/4f45c24d-34dc-45ad-9a61-ce6ea4cf218e.png)
+
+**`.mock`****的中将会记录****`mock function`****调用后的相关信息**。
+
+### mock return value
+
+```ts
+test("enjoy the cake with mock return value", () => {
+  ....
+```
+
+这里我们通过**`.mockReturnValu`**可以将**`function mock`**的操作略过，直接会返回**`.mockReturnValue`**中填充的返回值。通过执行**`npm test`**验证。
+
+### mock module
+
+```ts
+import desserCommentModule from "../src/desserCommentModule";
+jest.mock("../src/desserCommentModule");
+test.only("comment the dessert with mock module", () => {
+  ...
+```
+
+通过**`jest.mock`**，我们**`mock`**了甜点评论区，这项操作可以使我们对`dessertCommentModule`中的所有功能进行我们的测试定制。这里我们通过对评论功能进行**`mock return value`**，通过执行**`npm test`**看到：
+
+![](https://imgkr.cn-bj.ufileos.com/94a1addd-c2f2-432e-b5e4-258139efc469.png)
+
+并没有进入`dessertCommentModule`中的`comments`方法，直接返回了我们预置的返回值。
+
+### mock implementations
+
+```ts
+test.only("comment the dessert with mock implementations", () => {
+  ...
+```
+
+我们通过对评论功能进行**`mock implementations`**，通过执行**`npm test`**看到：
+
+![](https://imgkr.cn-bj.ufileos.com/109acfdb-a159-4921-945d-9de9905b12bb.png)
+
+进入了**`mockImplementation`**中的测试定制功能，并且调用了`dessert`中的`comments`方法。
+
+以上。
+
+> *https://jestjs.io/docs/en/getting-started*
+>
+> *https://www.valentinog.com/blog/jest/*
+>
+> *https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln*
