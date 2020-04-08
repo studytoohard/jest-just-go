@@ -1,6 +1,6 @@
 import dessert from "../src/dessert";
-import desserCommentModule from "../src/desserCommentModule";
-jest.mock("../src/desserCommentModule");
+import dessertCommentModule from "../src/dessertCommentModule";
+jest.mock("../src/dessertCommentModule");
 
 describe("test dessert feature", () => {
     test("enjoy the cake", () => {
@@ -27,13 +27,13 @@ describe("test dessert feature with mock", () => {
         expect(dessertFactoryMock.mock.results[0].value).toEqual(cake);
     })
     test("comment the dessert with mock module", () => {
-        const mockedDessert = desserCommentModule as jest.Mocked<typeof desserCommentModule>;
+        const mockedDessert = dessertCommentModule as jest.Mocked<typeof dessertCommentModule>;
         mockedDessert.comments.mockReturnValue(['not bad']);
         expect(mockedDessert.comments("cake is so good")).toEqual(['not bad']);
         expect(dessert.comment).toEqual([]);
     })
     test("comment the dessert with mock implementations", () => {
-        const mockedDessert = desserCommentModule as jest.Mocked<typeof desserCommentModule>;
+        const mockedDessert = dessertCommentModule as jest.Mocked<typeof dessertCommentModule>;
         mockedDessert.comments.mockImplementation((message: string) => {
             dessert.comments(message);
             return ['not bad'];

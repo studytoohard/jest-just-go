@@ -1,6 +1,6 @@
 import dessert from "./dessert";
 
-module desserCommentModule {
+module dessertCommentModule {
     export function comments(message: string) {
         dessert.comments(message);
         return dessert.comment;
@@ -8,4 +8,4 @@ module desserCommentModule {
 
 }
 
-export default desserCommentModule;
+export default dessertCommentModule;
