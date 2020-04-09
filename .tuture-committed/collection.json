@@ -15,10 +15,107 @@
         "Unit Test",
         "ts-jest"
       ],
-      "cover": ""
+      "cover": ".tuture/assets/Group 3备份 3.png"
     }
   ],
   "steps": [
+    {
+      "type": "step",
+      "id": "gx-XbnzVc",
+      "commit": "736932c922fb466bda4ac2a700e697e3426b6320",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "736932c922fb466bda4ac2a700e697e3426b6320",
+          "id": "WF1cAP2mvI",
+          "fixed": true,
+          "children": [
+            {
+              "text": "Init project"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": ".gitignore",
+          "display": false,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": ".gitignore",
+              "commit": "736932c922fb466bda4ac2a700e697e3426b6320",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
     {
       "commit": "c4ebabb19242aff24677a30a2dca5b353498b2d8",
       "id": "26uQ6MId7p",
@@ -89,8 +186,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_start"
+          ]
         },
         {
           "file": "readme.md",
@@ -143,8 +239,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_end"
+          ]
         }
       ]
     },
@@ -247,8 +342,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_start"
+          ]
         },
         {
           "file": "readme.md",
@@ -321,8 +415,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_end"
+          ]
         }
       ]
     },
@@ -379,8 +472,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_start"
+          ]
         },
         {
           "file": "src/dessert.js",
@@ -433,8 +525,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -468,8 +559,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -524,8 +614,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -661,8 +750,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -945,8 +1033,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_end"
+          ]
         }
       ]
     },
@@ -979,8 +1066,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_start"
+          ]
         },
         {
           "file": "__tests__/dessert.test.js",
@@ -1068,8 +1154,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -1107,8 +1192,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -1139,8 +1223,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -1416,8 +1499,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -1600,8 +1682,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_end"
+          ]
         }
       ]
     },
@@ -1634,8 +1715,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_start"
+          ]
         },
         {
           "file": "tsconfig.json",
@@ -1679,8 +1759,7 @@
                   ],
                   "id": "YfYXInLsG"
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -1820,8 +1899,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -1913,8 +1991,7 @@
                   ],
                   "id": "tAMx8gpkJ"
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -1944,8 +2021,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -1967,8 +2043,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -1998,8 +2073,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -2022,8 +2096,7 @@
                   ],
                   "id": "6JGoOlfn0"
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -2053,8 +2126,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -2076,8 +2148,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -2107,8 +2178,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -2313,8 +2383,211 @@
                 }
               ]
             }
-          ],
-          "flag": "step_end"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "id": "T9lFIySeyc",
+      "commit": "3cdf0a997db7760c57cab37f34f45d0dccb05973",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "3cdf0a997db7760c57cab37f34f45d0dccb05973",
+          "id": "8i-cYQg9hZ",
+          "fixed": true,
+          "children": [
+            {
+              "text": "Finish article"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": ".gitignore",
+          "display": false,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": ".gitignore",
+              "commit": "3cdf0a997db7760c57cab37f34f45d0dccb05973",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "jest.config.js",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "jest.config.js",
+              "commit": "3cdf0a997db7760c57cab37f34f45d0dccb05973",
+              "hiddenLines": [
+                [
+                  0,
+                  66
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "\"b/tuture-build/\\344\\270\\200\\346\\235\\257\\350\\214\\266\\347\\232\\204\\346\\227\\266\\351\\227\\264\\357\\274\\214\\344\\270\\212\\346\\211\\213Jest\\346\\265\\213\\350\\257\\225\\346\\241\\206\\346\\236\\266.md\"",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "\"b/tuture-build/\\344\\270\\200\\346\\235\\257\\350\\214\\266\\347\\232\\204\\346\\227\\266\\351\\227\\264\\357\\274\\214\\344\\270\\212\\346\\211\\213Jest\\346\\265\\213\\350\\257\\225\\346\\241\\206\\346\\236\\266.md\"",
+              "commit": "3cdf0a997db7760c57cab37f34f45d0dccb05973",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -2435,8 +2708,7 @@
                 }
               ]
             }
-          ],
-          "flag": "step_start"
+          ]
         },
         {
           "file": "src/dessert.ts",
@@ -2456,8 +2728,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -2487,8 +2758,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -2518,8 +2788,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -2549,8 +2818,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -2588,8 +2856,7 @@
                   ],
                   "id": "sbY7uQxD-"
                 }
-              ],
-              "flag": "file_start"
+              ]
             },
             {
               "type": "diff-block",
@@ -3045,8 +3312,7 @@
                     }
                   ]
                 }
-              ],
-              "flag": "file_end"
+              ]
             }
           ]
         },
@@ -3118,8 +3384,499 @@
                 }
               ]
             }
-          ],
-          "flag": "step_end"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "id": "VNVK5_UxKd3",
+      "commit": "310752581109abf2c718c4669357c0fefe5ad202",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "310752581109abf2c718c4669357c0fefe5ad202",
+          "id": "hYM-affXPym",
+          "fixed": true,
+          "children": [
+            {
+              "text": "Finish v2"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "\"b/tuture-build/\\344\\270\\200\\346\\235\\257\\350\\214\\266\\347\\232\\204\\346\\227\\266\\351\\227\\264\\357\\274\\214\\344\\270\\212\\346\\211\\213Jest\\346\\265\\213\\350\\257\\225\\346\\241\\206\\346\\236\\266.md\"",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "\"b/tuture-build/\\344\\270\\200\\346\\235\\257\\350\\214\\266\\347\\232\\204\\346\\227\\266\\351\\227\\264\\357\\274\\214\\344\\270\\212\\346\\211\\213Jest\\346\\265\\213\\350\\257\\225\\346\\241\\206\\346\\236\\266.md\"",
+              "commit": "310752581109abf2c718c4669357c0fefe5ad202",
+              "hiddenLines": [
+                [
+                  0,
+                  5
+                ],
+                [
+                  13,
+                  234
+                ],
+                [
+                  243,
+                  297
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "id": "MG7-quxKCd3",
+      "commit": "5b626ad2ce6ba04ae4a90e9b4e8eec1b6248c1d8",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "5b626ad2ce6ba04ae4a90e9b4e8eec1b6248c1d8",
+          "id": "pB2OIhV8xV7",
+          "fixed": true,
+          "children": [
+            {
+              "text": "Fixed wrong name"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "__tests__/dessert.test.ts",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessert.test.ts",
+              "commit": "5b626ad2ce6ba04ae4a90e9b4e8eec1b6248c1d8",
+              "hiddenLines": [
+                [
+                  8,
+                  27
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "src/desserCommentModule.ts",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "src/desserCommentModule.ts",
+              "commit": "5b626ad2ce6ba04ae4a90e9b4e8eec1b6248c1d8",
+              "hiddenLines": [
+                [
+                  7,
+                  7
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "\"b/tuture-build/\\344\\270\\200\\346\\235\\257\\350\\214\\266\\347\\232\\204\\346\\227\\266\\351\\227\\264\\357\\274\\214\\344\\270\\212\\346\\211\\213Jest\\346\\265\\213\\350\\257\\225\\346\\241\\206\\346\\236\\266.md\"",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "\"b/tuture-build/\\344\\270\\200\\346\\235\\257\\350\\214\\266\\347\\232\\204\\346\\227\\266\\351\\227\\264\\357\\274\\214\\344\\270\\212\\346\\211\\213Jest\\346\\265\\213\\350\\257\\225\\346\\241\\206\\346\\236\\266.md\"",
+              "commit": "5b626ad2ce6ba04ae4a90e9b4e8eec1b6248c1d8",
+              "hiddenLines": [
+                [
+                  0,
+                  234
+                ],
+                [
+                  243,
+                  334
+                ],
+                [
+                  343,
+                  343
+                ],
+                [
+                  360,
+                  379
+                ],
+                [
+                  395,
+                  422
+                ],
+                [
+                  433,
+                  451
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "yarn.lock",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "yarn.lock",
+              "commit": "5b626ad2ce6ba04ae4a90e9b4e8eec1b6248c1d8",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "step",
+      "id": "SoS20oG910m",
+      "commit": "fcf3fd33301a539e5a7ea4db45c38b476395686e",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "fcf3fd33301a539e5a7ea4db45c38b476395686e",
+          "id": "9w9aKHXe7TZ",
+          "fixed": true,
+          "children": [
+            {
+              "text": "Fixed wrong name"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "file": "src/dessertCommentModule.ts",
+          "display": true,
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "diff-block",
+              "file": "src/dessertCommentModule.ts",
+              "commit": "fcf3fd33301a539e5a7ea4db45c38b476395686e",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ]
         }
       ]
     }
