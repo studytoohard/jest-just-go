@@ -1,0 +1,3145 @@
+{
+  "name": "一杯茶的时间，上手Jest测试框架",
+  "description": "",
+  "id": "9e7496d74a134c36ac47982eb4aaa59c",
+  "created": "2020-04-04T15:21:17.967Z",
+  "articles": [
+    {
+      "name": "一杯茶的时间，上手Jest测试框架",
+      "description": "当我第一次听说TDD(Test-Driven Develop, 测试驱动开发)的时候，我首先想到的是测试小姐姐们想搞事情？后面发现这个玩意儿是想干掉测试，那好，下面开始让我们干掉这群整天给我们找bug...下面开始从简单的单元测试上手Jest测试框架。",
+      "id": "9e7496d74a134c36ac47982eb4aaa59c",
+      "topics": [
+        "Jest",
+        "Typescript",
+        "TDD",
+        "Unit Test",
+        "ts-jest"
+      ],
+      "cover": ""
+    }
+  ],
+  "steps": [
+    {
+      "commit": "c4ebabb19242aff24677a30a2dca5b353498b2d8",
+      "id": "26uQ6MId7p",
+      "articleId": "9e7496d74a134c36ac47982eb4aaa59c",
+      "type": "step",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "c4ebabb19242aff24677a30a2dca5b353498b2d8",
+          "id": "zK6xjBxKi3",
+          "fixed": true,
+          "children": [
+            {
+              "text": "我们能学到什么"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "numbered-list",
+              "children": [
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "Jest怎么4行代码完成一个测试用例"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 1
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "Jest怎么让测试用例覆盖率100%"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 2
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "Jest怎么和Typescript完美结合（填坑实录）"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 3
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "Jest最锋利的功能 Mock Functions"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 4
+                }
+              ]
+            }
+          ],
+          "flag": "step_start"
+        },
+        {
+          "file": "readme.md",
+          "display": false,
+          "commit": "c4ebabb19242aff24677a30a2dca5b353498b2d8",
+          "type": "file",
+          "children": [
+            {
+              "type": "diff-block",
+              "file": "readme.md",
+              "commit": "c4ebabb19242aff24677a30a2dca5b353498b2d8",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "flag": "step_end"
+        }
+      ]
+    },
+    {
+      "commit": "d8c6ef5d25f24ee9f6ed858390585fe2b254a4ef",
+      "id": "6RFX5lAT0i",
+      "articleId": "9e7496d74a134c36ac47982eb4aaa59c",
+      "type": "step",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "d8c6ef5d25f24ee9f6ed858390585fe2b254a4ef",
+          "id": "Gjskpeyx93",
+          "fixed": true,
+          "children": [
+            {
+              "text": "项目初始化"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "heading-three",
+              "children": [
+                {
+                  "text": "创建工程"
+                }
+              ],
+              "id": "_B42gioRS"
+            },
+            {
+              "type": "code-block",
+              "lang": "shell",
+              "children": [
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "# 注意powershell中'&&'替换为';'"
+                    }
+                  ]
+                },
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "mkdir jest-just-go && cd jest-just-go"
+                    }
+                  ],
+                  "id": "_B42gioRS"
+                }
+              ]
+            },
+            {
+              "type": "heading-three",
+              "children": [
+                {
+                  "text": "初始化"
+                }
+              ],
+              "id": "BJAgnRdJX"
+            },
+            {
+              "type": "code-block",
+              "lang": "shell",
+              "children": [
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "npm init -y"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "heading-three",
+              "children": [
+                {
+                  "text": "安装依赖"
+                }
+              ],
+              "id": "xOXCY1r-y"
+            },
+            {
+              "type": "code-block",
+              "lang": "shell",
+              "children": [
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "npm i jest --save-dev"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "flag": "step_start"
+        },
+        {
+          "file": "readme.md",
+          "display": false,
+          "commit": "d8c6ef5d25f24ee9f6ed858390585fe2b254a4ef",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "readme.md",
+              "commit": "d8c6ef5d25f24ee9f6ed858390585fe2b254a4ef",
+              "hiddenLines": [
+                [
+                  0,
+                  2
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "flag": "step_end"
+        }
+      ]
+    },
+    {
+      "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+      "id": "vKJriz6FaN",
+      "articleId": "9e7496d74a134c36ac47982eb4aaa59c",
+      "type": "step",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+          "id": "DMJ-zxCwxo",
+          "fixed": true,
+          "children": [
+            {
+              "text": "1.Jest怎么4行代码完成一个测试用例"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "heading-three",
+              "children": [
+                {
+                  "text": "初始化Jest默认配置"
+                }
+              ],
+              "id": "8P4NK_brd"
+            },
+            {
+              "type": "code-block",
+              "lang": "shell",
+              "children": [
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "npx jest --init"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "初始化时会出现提示信息，按y或enter即可",
+                  "bold": true
+                }
+              ]
+            }
+          ],
+          "flag": "step_start"
+        },
+        {
+          "file": "src/dessert.js",
+          "display": true,
+          "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "编写功能代码"
+                    }
+                  ],
+                  "id": "8uekC6mxJ"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "现在让我们正式开始，茶和图雀社区精心准备的甜品更搭哦。"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "在项目根目录下新建"
+                    },
+                    {
+                      "text": "src",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "目录，存放我们的功能代码。然后创建"
+                    },
+                    {
+                      "text": "src/dessert.js",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "。"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "src/dessert.js",
+              "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "我们已经编写了一个甜品类型，它有一个提供品尝的方法"
+                    },
+                    {
+                      "text": "enjoy",
+                      "code": true
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "__tests__/dessert.test.js",
+          "display": true,
+          "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "编写测试用例"
+                    }
+                  ],
+                  "id": "3EyU7WmYm"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "下面开始编码，实现对上面甜品功能的单元测试。"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "在项目根目录下新建"
+                    },
+                    {
+                      "text": "__tests__",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "目录，存放我们的测试用例。然后创建"
+                    },
+                    {
+                      "text": "__tests__/dessert.test.js",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "。"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessert.test.js",
+              "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "简单的四行代码，我们的第一个测试用例就已经大功告成。这里我们只需要注意"
+                    },
+                    {
+                      "text": "describe",
+                      "code": true
+                    },
+                    {
+                      "text": "、"
+                    },
+                    {
+                      "text": "test",
+                      "code": true
+                    },
+                    {
+                      "text": "、"
+                    },
+                    {
+                      "text": "expect",
+                      "code": true
+                    },
+                    {
+                      "text": "这3个Jest关键字就行了："
+                    }
+                  ]
+                },
+                {
+                  "type": "numbered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "text": "describe",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "：组合同一类的"
+                        },
+                        {
+                          "text": "test",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "用例，可以添加"
+                        },
+                        {
+                          "text": "beforeEach \\ afterEach、beforeAll \\ afterAll",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "（这里由于篇幅，这一类进阶特性将放在后续的教程中）为其下所有test进行统一描述和处理。"
+                        }
+                      ],
+                      "level": 0,
+                      "parent": "numbered-list",
+                      "number": 1
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "text": "test",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "：描述具体的测试用例，是单元测试的最小单元。"
+                        }
+                      ],
+                      "level": 0,
+                      "parent": "numbered-list",
+                      "number": 2
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "text": "expect",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "："
+                        },
+                        {
+                          "text": "Jest",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "最终落在了每一个对测试结果的期望上，通过"
+                        },
+                        {
+                          "text": "expect",
+                          "code": true,
+                          "bold": true
+                        },
+                        {
+                          "text": "中的返回值或是函数执行结果来和期望值进行对比。"
+                        }
+                      ],
+                      "level": 0,
+                      "parent": "numbered-list",
+                      "number": 3
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "readme.md",
+          "display": false,
+          "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "readme.md",
+              "commit": "98622051dcc4a4f768a3e66be5a23a3edacefc8a",
+              "hiddenLines": [
+                [
+                  0,
+                  17
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "heading-three",
+              "children": [
+                {
+                  "text": "执行测试"
+                }
+              ],
+              "id": "vLVfQr14k"
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "回到控制台，输入:"
+                }
+              ]
+            },
+            {
+              "type": "code-block",
+              "lang": "shell",
+              "children": [
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "npm test"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "无需更多配置，测试结果显示："
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "url": ".tuture/assets/s1.png",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "其中："
+                }
+              ]
+            },
+            {
+              "type": "bulleted-list",
+              "children": [
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "%Stmts",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "是语句覆盖率（statement coverage）：是不是每个语句都执行了？"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "bulleted-list"
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "%Branch",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "分支覆盖率（branch coverage）：是不是每个if代码块都执行了？"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "bulleted-list"
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "%Funcs",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "函数覆盖率（function coverage）：是不是每个函数都调用了？"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "bulleted-list"
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "%Lines",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "行覆盖率（line coverage）：是不是每一行都执行了？"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "bulleted-list"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "%Stmts",
+                  "code": true,
+                  "bold": true
+                },
+                {
+                  "text": "和"
+                },
+                {
+                  "text": "%Lines",
+                  "code": true
+                },
+                {
+                  "text": "的区别是：行覆盖率的颗粒度是大于语句覆盖率的，因为可能允许一行中有多条语句（js开发中尤为常见）。"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "我们更改"
+                },
+                {
+                  "bold": true,
+                  "text": "__tests__",
+                  "code": true
+                },
+                {
+                  "text": "/dessert.test.js",
+                  "code": true
+                },
+                {
+                  "text": "中的"
+                }
+              ]
+            },
+            {
+              "type": "code-block",
+              "lang": "javascript",
+              "children": [
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "expect(cake.enjoy()).toBe(\"Enjoy the cake\");"
+                    }
+                  ]
+                },
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "改为"
+                    }
+                  ]
+                },
+                {
+                  "type": "code-line",
+                  "children": [
+                    {
+                      "text": "expect(cake.enjoy()).toBe(\"enjoy the cake\");"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "执行测试命令查看测试不通过的情形："
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "url": ".tuture/assets/s2.png",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "flag": "step_end"
+        }
+      ]
+    },
+    {
+      "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+      "id": "csyozFs5pI",
+      "articleId": "9e7496d74a134c36ac47982eb4aaa59c",
+      "type": "step",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "id": "aHC78_bktr",
+          "fixed": true,
+          "children": [
+            {
+              "text": "2.Jest怎么让测试用例覆盖率达到100%"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "当我们的功能场景逐渐变得复杂，我们的测试就必须确保测试用例的覆盖率达到一个标准。最佳当然是100%啦，这样才能保证测试小改改们找不到我们的茬，闲的没事就会主动找我们拉话话啦，美好生活从测试用例覆盖率100%开始。"
+                }
+              ]
+            }
+          ],
+          "flag": "step_start"
+        },
+        {
+          "file": "__tests__/dessert.test.js",
+          "display": false,
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessert.test.js",
+              "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+              "hiddenLines": [
+                [
+                  0,
+                  1
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "src/dessertFactoty.js",
+          "display": true,
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "编写功能代码"
+                    }
+                  ],
+                  "id": "Pcbl2nA4x"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "甜点不够怎么办？要不我们开家店吧！先让红豆烧和提拉米苏够吃先~"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "src/dessertFactoty.js",
+              "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "现在想吃什么通过"
+                    },
+                    {
+                      "text": "dessertFactory.produce(...)",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": " order就fine啦"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "__tests__/dessertFactory.test.js",
+          "display": true,
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "编写测试用例"
+                    }
+                  ],
+                  "id": "jSSOC1xku"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "不过，要保证我们想吃的时候就必须能吃到（这个很重要），我们先验收先："
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessertFactory.test.js",
+              "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "--“我不要你觉得，我要我觉得“，我要上档次的“验收报告“！"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "--行，网页展示出来怎么样"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "\n配置"
+                    },
+                    {
+                      "text": "jest.config.js",
+                      "code": true
+                    },
+                    {
+                      "text": "保存测试用例覆盖率执行报告"
+                    }
+                  ],
+                  "id": "B6S5Orv7d"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "我们在执"
+                    },
+                    {
+                      "text": "初始化Jest默认配置",
+                      "code": true
+                    },
+                    {
+                      "text": "的时候，会生成在项目根目录下生成"
+                    },
+                    {
+                      "text": "jest.config.js",
+                      "code": true
+                    },
+                    {
+                      "text": "，里面列出了所有的配置项，未设置的已经被注释掉了。我们要将每次执行测试后生成的覆盖率报告保存下来需要找到下面这项配置属性并更改："
+                    }
+                  ]
+                },
+                {
+                  "type": "code-block",
+                  "lang": "js",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "// Indicates whether the coverage information should be collected while executing the test"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "collectCoverage: true,"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "然后我们可以"
+                    },
+                    {
+                      "text": "再次执行测试命令并用浏览器打开",
+                      "bold": true
+                    },
+                    {
+                      "text": ".\\coverage\\lcov-report\\index.html",
+                      "bold": true,
+                      "italic": true,
+                      "code": true
+                    },
+                    {
+                      "text": "查看测试用例覆盖率报告：",
+                      "bold": true
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "url": ".tuture/assets/d.gif",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "修改测试用例使覆盖率达到100%"
+                    }
+                  ],
+                  "id": "k0CvEXWVJ"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ".\\__tests__\\dessertFactory.test.js",
+                      "bold": true,
+                      "italic": true,
+                      "code": true
+                    }
+                  ]
+                },
+                {
+                  "type": "code-block",
+                  "lang": "js",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "const dessertFactoty = require(\"../src/dessertFactoty\");"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "describe(\"test dessertFactoty feature\", () => {"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    test(\"produce all dessert\", () => {"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "        const dessertType = ['Red bean burning', 'Tiramisu'];"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "        expect(dessertFactoty.produce(dessertType[0]).enjoy()).toBe(\"Enjoy the Red bean burning\");"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "        expect(dessertFactoty.produce(dessertType[1]).enjoy()).toBe(\"Enjoy the Tiramisu\");"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "        expect(() => { dessertFactoty.produce('Luckin Coffee') }).toThrow(\"please choose a dessert type\");"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    })"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "})"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "再测试并查看覆盖率报告："
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "url": ".tuture/assets/s3.png",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "这里"
+                    },
+                    {
+                      "text": "Functions列",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "为什么不是100%，大家可以点击"
+                    },
+                    {
+                      "text": "dessertFactory.js",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "根据详细说明分析推测。"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "jest.config.js",
+          "display": false,
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "jest.config.js",
+              "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "package.json",
+          "display": false,
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "package.json",
+              "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "readme.md",
+          "display": false,
+          "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "readme.md",
+              "commit": "bab77d8e3097dd881da4d7fc89557ea5222b43e0",
+              "hiddenLines": [
+                [
+                  0,
+                  22
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "flag": "step_end"
+        }
+      ]
+    },
+    {
+      "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+      "id": "rdPYOS4ApV",
+      "articleId": "9e7496d74a134c36ac47982eb4aaa59c",
+      "type": "step",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "id": "WYBoyt7qFX",
+          "fixed": true,
+          "children": [
+            {
+              "text": "3.Jest怎么和Typescript完美结合（填坑实录）"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "搜索引擎上现有的Jest+Typescript的样例比较少，并且存在了一定的问题没有解决，这一部分我已经填平了坑，可以作为配置参考。"
+                }
+              ]
+            }
+          ],
+          "flag": "step_start"
+        },
+        {
+          "file": "tsconfig.json",
+          "display": true,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "增加依赖"
+                    }
+                  ],
+                  "id": "1rbyPq84X"
+                },
+                {
+                  "type": "code-block",
+                  "lang": "shell",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "npm i ts-jest @types/jest typescript @types/node --save-dev"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "ts初始化"
+                    }
+                  ],
+                  "id": "YfYXInLsG"
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "tsconfig.json",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "修改"
+                    },
+                    {
+                      "text": "jest.config.js",
+                      "code": true
+                    },
+                    {
+                      "text": "配置"
+                    }
+                  ],
+                  "id": "JPUTIeF6r"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "添加如下配置项："
+                    }
+                  ]
+                },
+                {
+                  "type": "code-block",
+                  "lang": "javascript",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "// An array of file extensions your modules use"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "moduleFileExtensions: ["
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    \"js\","
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    \"json\","
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    \"jsx\","
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    \"ts\","
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    \"tsx\","
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "    \"node\""
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "],"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "// A preset that is used as a base for Jest's configuration"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "preset: \"ts-jest\","
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "jest.config.js",
+          "display": false,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-two",
+                  "children": [
+                    {
+                      "type": "paragraph",
+                      "children": [
+                        {
+                          "text": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "gLQhkFy3b"
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "jest.config.js",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [
+                [
+                  0,
+                  67
+                ],
+                [
+                  90,
+                  97
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "src/dessert.ts",
+          "display": true,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "修改功能代码\r"
+                    }
+                  ],
+                  "id": "tAMx8gpkJ"
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "src/dessert.ts",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "src/dessertFactoty.ts",
+          "display": true,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "src/dessertFactoty.ts",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "__tests__/dessert.test.ts",
+          "display": true,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "\n修改测试用例"
+                    }
+                  ],
+                  "id": "6JGoOlfn0"
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessert.test.ts",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "__tests__/dessertFactory.test.ts",
+          "display": true,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessertFactory.test.ts",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "package.json",
+          "display": false,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "package.json",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [
+                [
+                  0,
+                  8
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "package-lock.json",
+          "display": false,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "package-lock.json",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "readme.md",
+          "display": false,
+          "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "readme.md",
+              "commit": "fa830d6f90c19dbf62aa82e2e4ad6f3dc613dfd3",
+              "hiddenLines": [
+                [
+                  0,
+                  25
+                ]
+              ],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "如同代码重构后我们通过测试用例可以快速检查是否改动出现差错一样，我们这次变更可以执行Jest测试命令，检查是否对功能无影响。"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "url": ".tuture/assets/s4.png",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "flag": "step_end"
+        }
+      ]
+    },
+    {
+      "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+      "id": "XAuTQ3cfVm",
+      "articleId": "9e7496d74a134c36ac47982eb4aaa59c",
+      "type": "step",
+      "children": [
+        {
+          "type": "heading-two",
+          "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+          "id": "j1KCuxEE7L",
+          "fixed": true,
+          "children": [
+            {
+              "text": "4.Jest最锋利的功能 Mock Functions"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "关于"
+                },
+                {
+                  "text": "Jest",
+                  "bold": true,
+                  "code": true
+                },
+                {
+                  "text": "测试框架中的Mock功能，我们主要关注两点："
+                }
+              ]
+            },
+            {
+              "type": "numbered-list",
+              "children": [
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "mock function",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": ": 对函数进行mock."
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 1
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "mock return value",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": ": 对返回值进行mock."
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 2
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "从以上两点可以衍生出"
+                },
+                {
+                  "text": "Jest",
+                  "bold": true,
+                  "code": true
+                },
+                {
+                  "text": "对于代码单元测试中两项常用的锋利功能："
+                }
+              ]
+            },
+            {
+              "type": "numbered-list",
+              "children": [
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "对功能中业务逻辑简化后的重新实现，方便有指向性的进行测试（比如忽略实际场景中的跨服务调用功能等，仅需将原有功能中对应的调用逻辑改为定义的测试数据即可）。"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 1
+                },
+                {
+                  "type": "list-item",
+                  "children": [
+                    {
+                      "text": "对功能返回值的直接模拟。"
+                    }
+                  ],
+                  "level": 0,
+                  "parent": "numbered-list",
+                  "number": 2
+                }
+              ]
+            }
+          ],
+          "flag": "step_start"
+        },
+        {
+          "file": "src/dessert.ts",
+          "display": true,
+          "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "为甜点增加了评论功能。"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "src/dessert.ts",
+              "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "src/desserCommentModule.ts",
+          "display": true,
+          "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "专门建立一个互动区进行甜点的讨论。创建"
+                    },
+                    {
+                      "text": "src/dessertCommentModule.ts",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": ":"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "src/desserCommentModule.ts",
+              "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "file": "__tests__/dessert.test.ts",
+          "display": true,
+          "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+          "type": "file",
+          "children": [
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "下面开始"
+                    },
+                    {
+                      "text": "test dessert feature with mock~",
+                      "code": true
+                    },
+                    {
+                      "text": "这一部分均已通过测试，建议深入研读代码，感受"
+                    },
+                    {
+                      "text": "Jest mock",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "每一处的奥妙。如果下面各处期望的结果都如你所料，那么你就是图雀社区最靓的仔："
+                    }
+                  ],
+                  "id": "sbY7uQxD-"
+                }
+              ],
+              "flag": "file_start"
+            },
+            {
+              "type": "diff-block",
+              "file": "__tests__/dessert.test.ts",
+              "commit": "8d74b1d8266c72244397dec541e8fa9bcbc76774",
+              "hiddenLines": [],
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "explain",
+              "fixed": true,
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "id": "yzpSN5tep"
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "注意：我们可以更改",
+                      "bold": true
+                    },
+                    {
+                      "text": "test",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "为",
+                      "bold": true
+                    },
+                    {
+                      "text": "test.only",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "仅对",
+                      "bold": true
+                    },
+                    {
+                      "text": "test.only",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "的测试用例执行测试，降低测试时间并关注特定测试点。",
+                      "bold": true
+                    }
+                  ],
+                  "id": "yzpSN5tep"
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "mock function"
+                    }
+                  ],
+                  "id": "TbweHNnym"
+                },
+                {
+                  "type": "code-block",
+                  "lang": "ts",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "test.only(\"enjoy the cake with mock function\", () => {  ..."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "这里我们通过"
+                    },
+                    {
+                      "text": "jest.fn",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "进行了"
+                    },
+                    {
+                      "text": "mock function",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "功能的展示，通过执行"
+                    },
+                    {
+                      "text": "npm test",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "看到"
+                    },
+                    {
+                      "text": ".mock",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "的结构信息："
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "url": ".tuture/assets/0801.png",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ".mock",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "的中将会记录",
+                      "bold": true
+                    },
+                    {
+                      "text": "mock function",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "调用后的相关信息",
+                      "bold": true
+                    },
+                    {
+                      "text": "。"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "mock return value"
+                    }
+                  ],
+                  "id": "84p1_Sq_N"
+                },
+                {
+                  "type": "code-block",
+                  "lang": "ts",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "test(\"enjoy the cake with mock return value\", () => {"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "  ...."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "这里我们通过"
+                    },
+                    {
+                      "text": ".mockReturnValu",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "可以将"
+                    },
+                    {
+                      "text": "function mock",
+                      "code": true,
+                      "bold": true
+                    },
+                    {
+                      "text": "的操作略过，直接会返回"
+                    },
+                    {
+                      "text": ".mockReturnValue",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "中填充的返回值。通过执行"
+                    },
+                    {
+                      "text": "npm test",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "验证。"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "mock module"
+                    }
+                  ],
+                  "id": "LVReKVHJv"
+                },
+                {
+                  "type": "code-block",
+                  "lang": "ts",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "import desserCommentModule from \"../src/desserCommentModule\";"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "jest.mock(\"../src/desserCommentModule\");"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "test.only(\"comment the dessert with mock module\", () => {"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "  ..."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "通过"
+                    },
+                    {
+                      "text": "jest.mock",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "，我们"
+                    },
+                    {
+                      "text": "mock",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "了甜点评论区，这项操作可以使我们对"
+                    },
+                    {
+                      "text": "dessertCommentModule",
+                      "code": true
+                    },
+                    {
+                      "text": "中的所有功能进行我们的测试定制。这里我们通过对评论功能进行"
+                    },
+                    {
+                      "text": "mock return value",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "，通过执行"
+                    },
+                    {
+                      "text": "npm test",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "看到："
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "url": ".tuture/assets/0802.png",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "并没有进入"
+                    },
+                    {
+                      "text": "dessertCommentModule",
+                      "code": true
+                    },
+                    {
+                      "text": "中的"
+                    },
+                    {
+                      "text": "comments",
+                      "code": true
+                    },
+                    {
+                      "text": "方法，直接返回了我们预置的返回值。"
+                    }
+                  ]
+                },
+                {
+                  "type": "heading-three",
+                  "children": [
+                    {
+                      "text": "mock implementations"
+                    }
+                  ],
+                  "id": "O_yRWWRc3"
+                },
+                {
+                  "type": "code-block",
+                  "lang": "ts",
+                  "children": [
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "test.only(\"comment the dessert with mock implementations\", () => {"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code-line",
+                      "children": [
+                        {
+                          "text": "  ..."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "我们通过对评论功能进行"
+                    },
+                    {
+                      "text": "mock implementations",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "，通过执行"
+                    },
+                    {
+                      "text": "npm test",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "看到："
+                    }
+                  ]
+                },
+                {
+                  "type": "image",
+                  "url": ".tuture/assets/0803.png",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "进入了"
+                    },
+                    {
+                      "text": "mockImplementation",
+                      "bold": true,
+                      "code": true
+                    },
+                    {
+                      "text": "中的测试定制功能，并且调用了"
+                    },
+                    {
+                      "text": "dessert",
+                      "code": true
+                    },
+                    {
+                      "text": "中的"
+                    },
+                    {
+                      "text": "comments",
+                      "code": true
+                    },
+                    {
+                      "text": "方法。"
+                    }
+                  ]
+                }
+              ],
+              "flag": "file_end"
+            }
+          ]
+        },
+        {
+          "type": "explain",
+          "fixed": true,
+          "children": [
+            {
+              "type": "heading-two",
+              "children": [
+                {
+                  "text": "参考"
+                }
+              ],
+              "id": "7GIk6x4jT"
+            },
+            {
+              "type": "block-quote",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "https://jestjs.io/docs/en/getting-started\r  ",
+                      "italic": true
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "https://www.valentinog.com/blog/jest  ",
+                      "italic": true
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "https://dev.to/muhajirdev/unit-testing-with-typescript-and-jest-2gln",
+                      "italic": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "heading-two",
+              "children": [
+                {
+                  "text": "本文源码"
+                }
+              ],
+              "id": "vwxxK1Rca"
+            },
+            {
+              "type": "block-quote",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "https://github.com/studytoohard/jest-just-go",
+                      "italic": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "flag": "step_end"
+        }
+      ]
+    }
+  ],
+  "version": "v1",
+  "topics": [
+    "Jest",
+    "Typescript",
+    "TDD",
+    "Unit Test",
+    "ts-jest"
+  ],
+  "cover": "",
+  "remotes": [
+    {
+      "name": "origin",
+      "refs": {
+        "fetch": "https://github.com/studytoohard/jest-just-go.git",
+        "push": "https://github.com/studytoohard/jest-just-go.git"
+      }
+    }
+  ]
+}
