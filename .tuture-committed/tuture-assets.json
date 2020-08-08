@@ -1,38 +1,34 @@
 [
   {
     "localPath": ".tuture/assets/s1.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/edea94c0-746d-482c-af2e-432f8f23d63d.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s1.png"
   },
   {
     "localPath": ".tuture/assets/s2.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/6bbf67f6-6a1c-485d-b602-88cbd9e9acc5.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s2.png"
   },
   {
     "localPath": ".tuture/assets/d.gif",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/be955f25-64cd-4957-ad5f-dd768654d9a4.gif"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/d.gif"
   },
   {
     "localPath": ".tuture/assets/s3.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/1c5ef403-2201-4248-921f-b153837b10ad.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s3.png"
   },
   {
     "localPath": ".tuture/assets/s4.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/5c247ea3-e47d-4e5f-ac2b-6f5ef78d72d3.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s4.png"
   },
   {
     "localPath": ".tuture/assets/0801.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/4f45c24d-34dc-45ad-9a61-ce6ea4cf218e.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/0801.png"
   },
   {
     "localPath": ".tuture/assets/0802.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/94a1addd-c2f2-432e-b5e4-258139efc469.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/0802.png"
   },
   {
     "localPath": ".tuture/assets/0803.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/109acfdb-a159-4921-945d-9de9905b12bb.png"
-  },
-  {
-    "localPath": ".tuture/assets/Group 3备份 3.png",
-    "hostingUri": "https://imgkr.cn-bj.ufileos.com/a8b86625-97f8-4a03-9925-fec65d8e05c5.png"
+    "hostingUri": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/0803.png"
   }
 ]
