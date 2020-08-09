@@ -15,7 +15,7 @@
         "Unit Test",
         "ts-jest"
       ],
-      "cover": ".tuture/assets/Group 3备份 3.png"
+      "cover": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/jest-cover.jpg"
     }
   ],
   "steps": [
@@ -75,12 +75,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -215,12 +210,7 @@
               "fixed": true,
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ],
               "flag": "file_end"
@@ -377,12 +367,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -534,12 +519,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -623,12 +603,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -787,12 +762,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -858,7 +828,7 @@
             },
             {
               "type": "image",
-              "url": ".tuture/assets/s1.png",
+              "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s1.png",
               "children": [
                 {
                   "text": ""
@@ -1018,7 +988,7 @@
             },
             {
               "type": "image",
-              "url": ".tuture/assets/s2.png",
+              "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s2.png",
               "children": [
                 {
                   "text": ""
@@ -1101,12 +1071,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1163,12 +1128,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1232,12 +1192,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1345,7 +1300,7 @@
                 },
                 {
                   "type": "image",
-                  "url": ".tuture/assets/d.gif",
+                  "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/d.gif",
                   "children": [
                     {
                       "text": ""
@@ -1468,7 +1423,7 @@
                 },
                 {
                   "type": "image",
-                  "url": ".tuture/assets/s3.png",
+                  "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s3.png",
                   "children": [
                     {
                       "text": ""
@@ -1531,12 +1486,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1585,12 +1535,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1644,12 +1589,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1768,12 +1708,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -1946,12 +1881,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2000,12 +1930,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2052,12 +1977,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2105,12 +2025,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2157,12 +2072,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2215,12 +2125,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2269,12 +2174,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2328,12 +2228,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2368,7 +2263,7 @@
             },
             {
               "type": "image",
-              "url": ".tuture/assets/s4.png",
+              "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/s4.png",
               "children": [
                 {
                   "text": ""
@@ -2443,12 +2338,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2499,12 +2389,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2550,12 +2435,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2737,12 +2617,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2797,12 +2672,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2865,12 +2735,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -2989,7 +2854,7 @@
                 },
                 {
                   "type": "image",
-                  "url": ".tuture/assets/0801.png",
+                  "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/0801.png",
                   "children": [
                     {
                       "text": ""
@@ -3189,7 +3054,7 @@
                 },
                 {
                   "type": "image",
-                  "url": ".tuture/assets/0802.png",
+                  "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/0802.png",
                   "children": [
                     {
                       "text": ""
@@ -3275,7 +3140,7 @@
                 },
                 {
                   "type": "image",
-                  "url": ".tuture/assets/0803.png",
+                  "url": "https://static.tuture.co/c/9e7496d74a134c36ac47982eb4aaa59c/0803.png",
                   "children": [
                     {
                       "text": ""
@@ -3457,12 +3322,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -3559,12 +3419,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -3615,12 +3470,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -3691,12 +3541,7 @@
               ],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -3742,12 +3587,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
@@ -3839,12 +3679,7 @@
               "hiddenLines": [],
               "children": [
                 {
-                  "type": "paragraph",
-                  "children": [
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "text": ""
                 }
               ]
             },
